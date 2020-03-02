@@ -1,0 +1,47 @@
+<!--index.wxml-->
+<view class="homepage">
+  <view class="page-base">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 
+      获取头像昵称 
+    </button>
+    <block wx:else>
+    <view class="page-header">
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </view>  
+    </block>
+    
+    <form bindsubmit="survey_form">
+
+    <view class="weui-cell">
+      <view class="weui-cell__bd">
+        <input class="weui-input" placeholder="{{staffnumtx}}" name="staffnumberval"/>
+      </view>
+    </view>  
+
+    <view class="weui-cell">
+      <view class="weui-cell__bd">
+        <input class="weui-input" placeholder="{{mobilenumtx}}" name="mobilenumberval"/>
+      </view>
+    </view>  
+
+    <view class="weui-cell weui-cell_select">
+      <view class="weui-cell__hd weui-cell__hd_in-select-after">
+        <view class="weui-label cell-padding">{{gendertx}}</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker bindchange="bindGenderChange" value="{{genderIndex}}" range="{{genders}}">
+          <view class="weui-select weui-select_in-select-after">{{genders[genderIndex]}}</view>
+        </picker>
+      </view>
+    </view>
+
+    <view class="weui-btn-area">
+      <button class="weui-btn" type="primary" form-type="submit">Submit</button>
+    </view>
+
+  </form>
+
+  </view>
+  <view class="weui-footer_text-center">Copyright © 2008-2019 VCIC.</view>
+</view>

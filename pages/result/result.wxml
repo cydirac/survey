@@ -1,0 +1,15 @@
+<!--pages/result/result.wxml-->
+<view class="weui-panel weui-panel_access">
+  <view class="weui-panel__hd">Current Surveys</view>
+  <view class="list-box">
+    <view class="weui-panel__bd" wx:for="{{list_data}}" wx:key="index">
+      <view class="weui-media-box weui-media-box_text">
+        <view class="weui-media-box__title weui-media-box__title_in-text">{{item.sourceIp}}</view>
+        <view class="weui-media-box__desc">{{item.uid}}</view>
+        <view class="weui-media-box__desc">{{item.staffnum}}</view>
+        <view class="weui-media-box__desc">{{item.mobilenum}}</view>
+        <view class="weui-media-box__desc">{{item.gender}}</view>
+      </view>
+    </view>
+  </view>
+</view>
